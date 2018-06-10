@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class CustomStringBuilder {
 
@@ -56,11 +57,40 @@ public class CustomStringBuilder {
 		}
 		c = new char[c1.length];
 	}
+	
+	
+	public void insert(int index, String str)
+	{
+		if(c1 != null && index <= c1.length)
+		{
+			int length = str.length();
+			char[] temp = null;
+			temp = new char[c1.length];
+			System.arraycopy(c1, 0, temp, 0, c1.length);
+			c1 = new char[length + c1.length];
+			
+			char[] firstPart = Arrays.copyOf(temp, index);
+			char[] newChars = str.toCharArray();
+			char[] lastPart = Arrays.copyOfRange(temp,index , temp.length);
+			
+			System.arraycopy(firstPart, 0, c1, 0, firstPart.length);
+			System.arraycopy(newChars, 0, c1, firstPart.length, newChars.length);
+			System.arraycopy(lastPart, 0, c1, firstPart.length+newChars.length, lastPart.length);
+		}
+		else {
+			if(index > 0)
+			{
+				System.out.println("The CustomStringBuilder is empty. Change in index to 0.");
+			}
+			else {
+				append(str);
+			}
+		}
+	}
 
 	public String toString() {
 		String str = new String(c1);
 		return str;
-
 	}
 }
 
@@ -73,7 +103,9 @@ class child{
 		String str2 = "Java";
 		csb.append(str1);
 		csb.append(str2);
+		csb.insert(2,"middle");
 		System.out.println(csb);
 	}
+	
 
 }
