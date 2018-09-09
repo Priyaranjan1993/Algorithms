@@ -1,7 +1,5 @@
 package LinkedList;
 
-import LinkedList.Merge2SortedList.ListNode;
-
 public class ReverseLinkedList {
 
 	
