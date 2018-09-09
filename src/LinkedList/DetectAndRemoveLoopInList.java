@@ -59,7 +59,7 @@ public class DetectAndRemoveLoopInList {
 		list.head.next.next.next = new ListNode(4);
 		list.head.next.next.next.next = new ListNode(5);
 
-		list.head.next.next.next.next.next = list.head;
+		list.head.next.next.next.next.next = list.head.next.next;
 
 		list.detectAndRemoveCycle(list.head);
 		System.out.print("Final List is "); 
