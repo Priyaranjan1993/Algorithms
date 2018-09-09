@@ -3,7 +3,7 @@ package LinkedList;
 public class ReverseLinkedList {
 
 	
-	public static ListNode head, prev, temp, next, r;
+	public ListNode head, prev, temp, next, r;
 
 	static class ListNode {
 		int val;
@@ -40,17 +40,18 @@ public class ReverseLinkedList {
 	{
 		ReverseLinkedList list = new ReverseLinkedList();
 		
-		list.head = new ListNode(1); 
+		list.head = null;
+/*		list.head = new ListNode(1); 
 		list.head.next = new ListNode(2); 
 		list.head.next.next = new ListNode(3);
 		list.head.next.next.next = new ListNode(4);
-		list.head.next.next.next.next = new ListNode(5);
+		list.head.next.next.next.next = new ListNode(5);*/
 		System.out.print("Created List is "); 
-		list.print(head); 
+		list.print(list.head); 
 
-		r = list.reverseList(head);
+		list.r = list.reverseList(list.head);
 		System.out.println("Reversed List ");
-		list.print(r);
+		list.print(list.r);
 
 
 	}
