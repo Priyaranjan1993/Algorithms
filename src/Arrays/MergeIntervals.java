@@ -15,7 +15,7 @@ class Interval {
 public class MergeIntervals {
 
 	public List<Interval> merge(List<Interval> intervals) {
-
+		ArrayList<Interval> arr = new ArrayList<>();
 		if(intervals.size() == 0)
 		{
 			return null;
@@ -34,8 +34,6 @@ public class MergeIntervals {
 				}
 			}
 		});
-
-		ArrayList<Interval> arr = new ArrayList<>();
 
 		Interval previous = intervals.get(0);
 
