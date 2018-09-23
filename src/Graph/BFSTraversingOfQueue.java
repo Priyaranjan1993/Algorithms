@@ -62,6 +62,14 @@ public class BFSTraversingOfQueue {
 
 			}
 		}
+		
+		for(int k=0; k<graph.arr.length;k++)
+		{
+			if(map.get(k) == null)
+			{
+				searchInBFS(k,graph.arr.length,graph);
+			}
+		}
 
 
 	}
