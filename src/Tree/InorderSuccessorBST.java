@@ -8,12 +8,12 @@ public class InorderSuccessorBST {
 	TreeNode root;
 
 
-	public TreeNode inOrderSuccessor(TreeNode root, int i) {
+	public TreeNode inOrderSuccessor(TreeNode root, TreeNode p) {
 		List<TreeNode> list = new ArrayList<TreeNode>();
 		list = getInorderList(root,list);
 		for(int k=0; k< list.size();k++)
 		{
-			if(list.get(k).val == i)
+			if(list.get(k).val == p.val)
 			{
 				if(k+1 > list.size()-1)
 				{
@@ -70,7 +70,7 @@ public class InorderSuccessorBST {
 		tree.root.right = new TreeNode(6);
 		tree.root.left.right = new TreeNode(4);
 
-		System.out.println(tree.inOrderSuccessor(tree.root,6));
+		System.out.println(tree.inOrderSuccessor(tree.root,tree.root.right));
 	}
 
 }
