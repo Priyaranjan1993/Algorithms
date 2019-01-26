@@ -2,9 +2,13 @@ package Strings;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /*Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  It is guaranteed there is at least one word that isn't banned, and that the answer is unique.
 
@@ -12,7 +16,7 @@ Words in the list of banned words are given in lowercase, and free of punctuatio
 
 public class MostCommonWord {
 
-	public String mostCommonWord(String paragraph, String[] banned) {
+/*	public String mostCommonWord(String paragraph, String[] banned) {
 		if(paragraph.length() ==0)
 		{
 			return null;
@@ -44,6 +48,35 @@ public class MostCommonWord {
 			}
 		}
 		return res;
+	}*/
+	
+	public String mostCommonWord(String paragraph, String[] banned) {
+		if(paragraph.length() == 0)
+		{
+			return null;
+		}
+		Set<String> bannedWord = new HashSet<>(Arrays.asList(banned));
+		Map<String,Integer> map = new HashMap<>();
+		int max = 0;
+		String res = null;
+		String[] words  = paragraph.replaceAll("\\W"," ").toLowerCase().split("\\s+");
+		for(String word:words)
+		{
+			if(!bannedWord.contains(word))
+			{
+				map.put(word, map.getOrDefault(word, 0)+1);
+			}
+		}
+		for(Map.Entry<String, Integer> entry : map.entrySet())
+		{
+			if(entry.getValue() > max)
+			{
+				max = entry.getValue();
+				res = entry.getKey();
+			}
+		}
+		return res;
+		
 	}
 	
 	public static void main(String args[])

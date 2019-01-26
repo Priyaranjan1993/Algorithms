@@ -1,0 +1,19 @@
+package Tree;
+
+public class DiameterOfBST {
+	int max = 0;
+	public int diameterOfBinaryTree(TreeNode root) {
+		diameterOfBinaryTreeUtil(root);
+		return max;
+	}
+
+	private int diameterOfBinaryTreeUtil(TreeNode root) {
+		if(root == null)
+			return 0;
+		
+		int left = diameterOfBinaryTree(root.left);
+		int right = diameterOfBinaryTree(root.right);
+		max = Math.max(max, left+right);
+		return Math.max(left , right ) + 1;
+	}
+}

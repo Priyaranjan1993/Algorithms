@@ -52,7 +52,7 @@ public class LetterCombinationsOfPhoneNumber {
 	public static void main(String args[])
 	{
 		LetterCombinationsOfPhoneNumber l = new LetterCombinationsOfPhoneNumber();
-		String digits = "";
+		String digits = "23";
 		List<String> ls = l.letterCombinations(digits);
 		for(String s : ls)
 		{

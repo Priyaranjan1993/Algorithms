@@ -1,12 +1,14 @@
 package Tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class AverageOfLevelsInABinaryTree {
 	TreeNode root;
 
-	public List<Double> averageOfLevels(TreeNode root) {
+/*	public List<Double> averageOfLevels(TreeNode root) {
 		List<Integer> count = new ArrayList<Integer>();
 		List<Double> sum = new ArrayList<Double>();
 		List<Double> result = new ArrayList<Double>();
@@ -16,9 +18,9 @@ public class AverageOfLevelsInABinaryTree {
 			result.add((double) (sum.get(i)/count.get(i)));
 		}
 		return result;
-	}
+	}*/
 
-	public void averageCalculation(TreeNode root, int i, List<Integer> count, List<Double> sum) {
+/*	public void averageCalculation(TreeNode root, int i, List<Integer> count, List<Double> sum) {
 		if(root == null)
 		{
 			return;
@@ -34,6 +36,45 @@ public class AverageOfLevelsInABinaryTree {
 		}
 		averageCalculation(root.left, i+1, count, sum);
 		averageCalculation(root.right, i+1, count, sum);
+	}*/
+	
+	public List<Double> averageOfLevels(TreeNode root) {
+		List<Double> result = new ArrayList<Double>();
+		if (root == null)
+		{
+			return null;
+		}
+		Queue<TreeNode> queue = new LinkedList<>();
+		if(root != null)
+		{
+			queue.add(root);
+		}
+		
+		while(!queue.isEmpty())
+		{
+			int size = queue.size();
+			int total = size;
+			double average = 0;
+			double sum = 0;
+			while(size > 0)
+			{
+				size--;
+				TreeNode t = queue.poll();
+				sum = sum + t.val;
+				if(t.left != null)
+				{
+					queue.add(t.left);
+				}
+				if(t.right != null)
+				{
+					queue.add(t.right);
+				}
+			}
+			average = sum/total;
+			result.add(average);
+		}
+		
+		return result;
 	}
 
 	public static void main(String args[])
