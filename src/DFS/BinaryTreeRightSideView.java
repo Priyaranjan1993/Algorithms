@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class BinaryTreeRightSideView {
+	TreeNode root;
 	public List<Integer> rightSideView(TreeNode root) {
 		List<Integer> ls = new ArrayList<>();
 		if(root == null)
@@ -41,5 +42,24 @@ public class BinaryTreeRightSideView {
 
 			}
 		}
+	}
+	
+	public static void main(String args[])
+	{
+		BinaryTreeRightSideView tree = new BinaryTreeRightSideView();
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.left.right = new TreeNode(5);
+		
+		tree.root.right = new TreeNode(3);
+		tree.root.right.right = new TreeNode(4);
+		
+		
+		List<Integer> ls = tree.rightSideView(tree.root);
+		for (int x : ls)
+		{
+			System.out.println(x);
+		}
+		
 	}
 }

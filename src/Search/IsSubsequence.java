@@ -12,5 +12,13 @@ public class IsSubsequence {
 		}
 		return true;
 	}
+	
+	public static void main(String args[])
+	{
+		IsSubsequence s = new IsSubsequence();
+		String ss = "abc";
+		String t = "ahbgdc";
+		System.out.println(s.isSubsequence(ss, t));
+	}
 
 }

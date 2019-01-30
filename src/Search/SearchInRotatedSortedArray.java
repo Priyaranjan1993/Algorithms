@@ -85,8 +85,8 @@ public class SearchInRotatedSortedArray {
 
 	public static void main(String args[])
 	{
-		int[] arr = new int[] {1};
-		int key = 1;
+		int[] arr = new int[] {4,5,6,7,0,1,2};
+		int key = 0;
 		SearchInRotatedSortedArray s = new SearchInRotatedSortedArray();
 		int result = s.search(arr, key);
 		System.out.println(result);

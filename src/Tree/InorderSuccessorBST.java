@@ -6,8 +6,29 @@ import java.util.Stack;
 
 public class InorderSuccessorBST {
 	TreeNode root;
+	
+	public TreeNode inOrderSuccessor(TreeNode root, TreeNode p)
+	{
+		if(root == null)
+			return null;
+		
+		TreeNode succ = null;
+		
+		while(root != null)
+		{
+			if(root.val <= p.val)
+			{
+				root = root.right;
+			}
+			else {
+				succ = root;
+				root = root.left;
+			}
+		}
+		return succ;
+	}
 
-
+/*
 	public TreeNode inOrderSuccessor(TreeNode root, TreeNode p) {
 		List<TreeNode> list = new ArrayList<TreeNode>();
 		list = getInorderList(root,list);
@@ -26,9 +47,9 @@ public class InorderSuccessorBST {
 			}
 		}
 		return null;
-	}
+	}*/
 
-	public List<TreeNode> getInorderList(TreeNode root, List<TreeNode> list)
+/*	public List<TreeNode> getInorderList(TreeNode root, List<TreeNode> list)
 	{
 		Stack<TreeNode> s = new Stack<>();
 		if(root == null)
@@ -50,7 +71,7 @@ public class InorderSuccessorBST {
 			}
 		}
 		return list;
-	}
+	}*/
 
 	public static void main(String args[])
 	{

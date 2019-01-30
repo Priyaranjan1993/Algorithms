@@ -30,8 +30,8 @@ public class MaxSizeSubArraySum {
 	public static void main(String args[])
 	{
 		MaxSizeSubArraySum m = new MaxSizeSubArraySum();
-		int[] nums = new int[] {-2, -1, 2, 1};
-		int  k = 1;
+		int[] nums = new int[] {1, -1, 5, -2, 3};
+		int  k = 3;
 		System.out.println(m.maxSubArrayLen(nums, k));
 	}
 }

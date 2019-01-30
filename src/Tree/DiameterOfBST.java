@@ -11,8 +11,8 @@ public class DiameterOfBST {
 		if(root == null)
 			return 0;
 		
-		int left = diameterOfBinaryTree(root.left);
-		int right = diameterOfBinaryTree(root.right);
+		int left = diameterOfBinaryTreeUtil(root.left);
+		int right = diameterOfBinaryTreeUtil(root.right);
 		max = Math.max(max, left+right);
 		return Math.max(left , right ) + 1;
 	}

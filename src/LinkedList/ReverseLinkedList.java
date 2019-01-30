@@ -40,12 +40,12 @@ public class ReverseLinkedList {
 	{
 		ReverseLinkedList list = new ReverseLinkedList();
 		
-		list.head = null;
-/*		list.head = new ListNode(1); 
+		/*list.head = null;*/
+		list.head = new ListNode(1); 
 		list.head.next = new ListNode(2); 
 		list.head.next.next = new ListNode(3);
 		list.head.next.next.next = new ListNode(4);
-		list.head.next.next.next.next = new ListNode(5);*/
+		list.head.next.next.next.next = new ListNode(5);
 		System.out.print("Created List is "); 
 		list.print(list.head); 
 
