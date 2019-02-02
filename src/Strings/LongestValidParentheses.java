@@ -45,7 +45,7 @@ public class LongestValidParentheses {
 	public static void main(String args[])
 	{
 		LongestValidParentheses l = new LongestValidParentheses();
-		String s = "(()";
+		String s = "()()((()";
 		System.out.println(l.longestValidParentheses(s));
 		
 	}
