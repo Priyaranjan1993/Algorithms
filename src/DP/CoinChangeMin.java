@@ -54,8 +54,8 @@ public class CoinChangeMin {
 
 	public static void main(String args[]) {
 		CoinChangeMin c = new CoinChangeMin();
-		int[] coins = new int[] {2};
-		int amount = 3;
+		int[] coins = new int[] {1,2,5};
+		int amount = 11;
 		System.out.println(c.coinChange(coins, amount));
 	}
 }
