@@ -2,10 +2,10 @@ package Strings;
 
 import java.util.HashMap;
 
-class Solution {
+public class RomanToInteger {
 	HashMap<Character, Integer> hm= new HashMap<Character,Integer>();
 
-	Solution()
+	RomanToInteger()
 	{
 
 		hm.put('I', 1);
@@ -53,7 +53,7 @@ class Solution {
 	public static void main(String args[])
 	{
 		String str = "MCMXCIV";
-		Solution sol = new Solution();
+		RomanToInteger sol = new RomanToInteger();
 		sol.romanToInt(str);
 	}
 }
