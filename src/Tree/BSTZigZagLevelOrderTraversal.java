@@ -18,9 +18,9 @@ public class BSTZigZagLevelOrderTraversal {
 
 		while(!s1.isEmpty() || !s2.isEmpty())
 		{
+			List<Integer> ls= new LinkedList<>();
 			while(!s1.isEmpty())
 			{
-				List<Integer> ls= new LinkedList<>();
 				int size = s1.size();
 
 				for(int i = 0; i < size ; i++)
@@ -37,15 +37,17 @@ public class BSTZigZagLevelOrderTraversal {
 					}
 				}
 			}
+			
+			result.add(ls);
+			ls = new LinkedList<>();
 			while(!s2.isEmpty())
 			{
-				List<Integer> ls2= new LinkedList<>();
 				int size = s2.size();
 
 				for(int i = 0; i < size ; i++)
 				{
 					TreeNode pop = s2.pop();
-					ls2.add(pop.val);
+					ls.add(pop.val);
 					while(pop.right != null)
 					{
 						s1.push(pop.right);
@@ -54,6 +56,11 @@ public class BSTZigZagLevelOrderTraversal {
 					{
 						s1.push(pop.left);
 					}
+				}
+				
+				if(!ls.isEmpty())
+				{
+					result.add(ls);
 				}
 
 			}

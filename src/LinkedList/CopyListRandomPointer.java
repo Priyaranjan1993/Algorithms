@@ -3,11 +3,14 @@ package LinkedList;
 import java.util.HashMap;
 import java.util.Map;
 
+import LinkedList.Addition.ListNode;
+
 public class CopyListRandomPointer {
 
 	/*RandomListNode tempHead,oldNode, newNode, headOld, head1;*/
 	/*Definition for singly-linked list with a random pointer.*/
-	class RandomListNode {
+	RandomListNode head1;
+	static class RandomListNode {
 		int label;
 		RandomListNode next, random;
 		RandomListNode(int x) { this.label = x; }
@@ -100,6 +103,17 @@ public class CopyListRandomPointer {
 		}
 
 		return tempHead;
+	}
+
+	public static void main(String args[])
+	{
+		CopyListRandomPointer list = new CopyListRandomPointer();
+		list.head1 = new RandomListNode(5); 
+		list.head1.next = new RandomListNode(5); 
+		list.head1.next.next = new RandomListNode(9); 
+		list.head1.next.next.next = new RandomListNode(4); 
+		list.head1.next.next.next.next = new RandomListNode(6);
+		list.copyRandomList(list.head1);
 	}
 
 }

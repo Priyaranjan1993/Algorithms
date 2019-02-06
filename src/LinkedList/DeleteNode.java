@@ -1,6 +1,5 @@
 package LinkedList;
 
-import LinkedList.Merge2SortedListB.ListNode;
 
 public class DeleteNode {
 

@@ -18,30 +18,29 @@ public class PlusOne {
 	}
 
 	public ListNode plusOne(ListNode head) {
-		ListNode h1 = head;
-		ListNode h2 = reverse(h1);
+		ListNode h2 = reverse(head);
+		ListNode p = h2;
 
-		while(h2 != null)
+		while(p != null)
 		{
-			if(h2.val+1 <= 9)
+			if(p.val+1 <= 9)
 			{
-				h2.val = h2.val + 1;
+				p.val = p.val + 1;
 				break;
 			}
 			else {
-				h2.val = 0;
-				if(h2.next == null)
+				p.val = 0;
+				if(p.next == null)
 				{
-					h2.next = new ListNode(1);
+					p.next = new ListNode(1);
 					break;
 				}
-				h2 = h2.next;
+				p = p.next;
 			}
 
 		}
 
-		reverse(h2);
-		return head;
+		return reverse(h2);
 
 	}
 
@@ -67,12 +66,16 @@ public class PlusOne {
 		PlusOne list = new PlusOne(); 
 
 		// creating first linked list 
-		list.head1 = new ListNode(3); 
+		
+		list.head1 = new ListNode(9); 
+		list.head1.next = new ListNode(9);
+		
+/*		list.head1 = new ListNode(3); 
 		list.head1.next = new ListNode(6); 
 		list.head1.next.next = new ListNode(1); 
 		list.head1.next.next.next = new ListNode(1); 
 		list.head1.next.next.next.next = new ListNode(3); 
-
+*/
 		list.print(list.plusOne(list.head1));
 
 	}

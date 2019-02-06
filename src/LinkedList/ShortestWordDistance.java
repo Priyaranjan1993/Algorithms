@@ -9,12 +9,12 @@ public class ShortestWordDistance {
 
 		for(int i=0; i < words.length; i++)
 		{
-			if(words[i] == word1)
+			if(words[i].equals(word1))
 			{
 				w1 = i;
 			}
 
-			else if(words[i] == word2)
+			else if(words[i].equals(word2))
 			{
 				w2 = i;
 			}
@@ -28,7 +28,7 @@ public class ShortestWordDistance {
 	public static void main(String args[])
 	{
 		ShortestWordDistance s = new ShortestWordDistance();
-		String[] arr = new String[] {"abc","def","practice", "makes", "perfect", "coding", "makes"};
+		String[] arr = new String[] {"practice", "makes", "perfect", "coding", "makes"};
 		int distance = s.shortestDistance(arr, "coding", "practice");
 		System.out.println(distance);
 	}
