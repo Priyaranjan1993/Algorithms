@@ -24,7 +24,7 @@ public class LIS {
 	public static void main(String args[])
 	{
 		LIS demo = new LIS();
-		int[]nums = new int[] {9,1,3,7,5,6,20};
+		int[]nums = new int[] {9,11,13,1};
 		int ans = demo.lengthOfLIS(nums);
 		System.out.println(ans);
 	}

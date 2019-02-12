@@ -15,7 +15,7 @@ public class SymmetricTree {
 		{
 			return true;
 		}
-		if(left == null | right == null)
+		if(left == null || right == null)
 		{
 			return false;
 		}

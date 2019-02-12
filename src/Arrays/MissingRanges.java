@@ -55,8 +55,8 @@ public class MissingRanges {
     public static void main(String[] args) {
     	MissingRanges m = new MissingRanges();
     	int[] nums = new int[] {0, 1, 3, 50, 75};
-    	int lower = 10;
-    	int upper = -99;
+    	int lower = 0;
+    	int upper = 99;
     	System.out.println(m.findMissingRanges(nums, lower, upper));
 	}
 }

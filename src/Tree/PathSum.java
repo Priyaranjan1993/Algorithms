@@ -32,7 +32,7 @@ public class PathSum {
 			}
 			if(total == sum)
 			{
-				val.add(new ArrayList(ls));
+				val.add(new ArrayList<>(ls));
 			}
 			ls.remove(ls.size() - 1);
 			return;

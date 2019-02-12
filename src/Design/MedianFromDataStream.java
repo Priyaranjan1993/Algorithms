@@ -1,32 +1,41 @@
 package Design;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class MedianFromDataStream {
-	    private Queue<Long> small = new PriorityQueue(),
-	                        large = new PriorityQueue();
+	
+	PriorityQueue<Integer> min = new PriorityQueue<>();
+	PriorityQueue<Integer> max = new PriorityQueue<>(Collections.reverseOrder());
 
-	    public void addNum(int num) {
-	        large.add((long) num);
-	        small.add(-large.poll());
-	        if (large.size() < small.size())
-	            large.add(-small.poll());
-	    }
+    public void addNum(int num) {
+    	max.offer(num);
+    	min.offer(max.poll());
+    	if(max.size() < min.size())
+    	{
+    		max.offer(min.poll());
+    	}
+    }
 
-	    public double findMedian() {
-	        return large.size() > small.size()
-	               ? large.peek()
-	               : (large.peek() - small.peek()) / 2.0;
-	    }
+    // Returns the median of current data stream
+    public double findMedian() {
+    	if(max.size() == min.size())
+    	{
+    		return (max.peek() + min.peek())/2.0;
+    	}
+    	else {
+    		return max.peek();
+    	}
+    }
 	
 	public static void main(String args[]) {
 		MedianFromDataStream m = new MedianFromDataStream();
 		m.addNum(1);
 		m.addNum(2);
-		m.addNum(3);
-		m.addNum(8);
-		m.addNum(10);
+		//m.addNum(3);
+/*		m.addNum(8);
+		m.addNum(10);*/
 		
 		System.out.println(m.findMedian());
 		

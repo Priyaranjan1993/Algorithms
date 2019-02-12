@@ -26,7 +26,7 @@ public class PathSum2 {
 			}
 			if(total == sum)
 			{
-				ls.add(new ArrayList(innerList));
+				ls.add(new ArrayList<>(innerList));
 			}
 			innerList.remove(innerList.size() - 1);
 			return;
