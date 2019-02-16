@@ -44,7 +44,8 @@ public class WordSearch {
 	}
 	public static void main(String args[]) {
 		WordSearch w = new WordSearch();
-		char[][] board = new char[][] {  {'C','A','A'},
+		char[][] board = new char[][] {  
+			{'C','A','A'},
 			{'A','A','A'},
 			{'B','C','D'}};
 			String word = "AAB";

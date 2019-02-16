@@ -34,7 +34,7 @@ public class SlidingWMax {
 	        deque.offer(i);
 	 
 	        if(i+1>=k)
-	            result[i+1-k]=nums[deque.peek()];
+	            result[i+1-k]=nums[deque.peekFirst()];
 	    }
 	 
 	    return result;
