@@ -31,4 +31,11 @@ public class LongestPalindromeSubstring {
 
 		return result;
 	}
+	
+	public static void main(String args[])
+	{
+		LongestPalindromeSubstring l = new LongestPalindromeSubstring();
+		String s = "babad";
+		System.out.println(l.longestPalindrome(s));
+	}
 }

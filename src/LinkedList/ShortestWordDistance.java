@@ -29,7 +29,7 @@ public class ShortestWordDistance {
 	{
 		ShortestWordDistance s = new ShortestWordDistance();
 		String[] arr = new String[] {"practice", "makes", "perfect", "coding", "makes"};
-		int distance = s.shortestDistance(arr, "coding", "practice");
+		int distance = s.shortestDistance(arr, "coding", "makes");
 		System.out.println(distance);
 	}
 }

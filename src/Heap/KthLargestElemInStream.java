@@ -13,7 +13,7 @@ public class KthLargestElemInStream {
 			add(n);
 	}
 
-	public int add(int n) {
+/*	public int add(int n) {
 		if (q.size() < k)
 			q.offer(n);
 		else if (q.peek() < n) {
@@ -21,11 +21,21 @@ public class KthLargestElemInStream {
 			q.offer(n);
 		}
 		return q.peek();
+	}*/
+	
+	public int add (int n)
+	{
+		q.offer(n);
+		if(q.size() > k)
+		{
+			q.poll();
+		}
+		return q.peek();
 	}
 
 	public static void main(String args[]) {
 		int k = 3;
-		int[] arr = new int[] {4,5,8};
+		int[] arr = new int[] {4,5,8,2};
 		KthLargestElemInStream kthLargest = new KthLargestElemInStream(k, arr);
 		int res = kthLargest.add(2);   // returns 4
 /*		kthLargest.add(5);   // returns 5

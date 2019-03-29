@@ -20,7 +20,7 @@ public class MeetingRooms2 {
 
 		for(int i = 1; i < intervals.length ; i++)
 		{
-			if(intervals[i].start > queue.peek())
+			if(intervals[i].start >= queue.peek())
 			{
 				queue.poll();
 			}

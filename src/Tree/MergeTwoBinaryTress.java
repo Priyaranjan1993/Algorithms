@@ -7,7 +7,7 @@ public class MergeTwoBinaryTress {
 
 	private TreeNode merge(TreeNode t1, TreeNode t2) {
 		TreeNode root;
-		if(t1 != null && t2 != null)
+		if(t1 != null || t2 != null)
 		{
 			int val = (t1 == null ? 0 : t1.val) + (t2 == null ? 0 : t2.val);
 			root= new TreeNode(val);
